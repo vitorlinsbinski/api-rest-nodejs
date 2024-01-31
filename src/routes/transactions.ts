@@ -8,6 +8,16 @@ import { checkSessionIdExists } from '../middlewares/check-session-id-exists';
 // Muitos websites armazenam um id durante a navegação
 // Com esse id, é possível validar que uma mesma pessoa fez certas requisições
 
+// Testes unitários: testam exclusivamente uma unidade da aplicação de forma isolada, sem contexto
+// Testes de integração: testam a comunicação entre duas ou mais unidades
+// Testes E2E (End-to-end): testes que simulam um usuário operando a aplicação
+
+// E2E no Front-end: abre a página de log-in, digite o texto (email) no campo com id email, e depois clique no botão , ...
+// E2E no Back-end: o usuário (front-end) faz chamadas HTTP, websockets, API end-points
+
+// Pirâmide de testes: E2E (não dependem de nenhuma tecnologia, nenhuma arquitetura de software)
+// E2E são testes lentos
+
 export async function transactionRoutes(app: FastifyInstance) {
   app.get('/', { preHandler: [checkSessionIdExists] }, async (req, res) => {
     const { sessionId } = req.cookies;
