@@ -14,3 +14,9 @@
 # Requisitos não funcionais (RNF)
 
 -
+
+# Opções de Deploy
+
+- render.com
+- fly.io
+- railway.app
